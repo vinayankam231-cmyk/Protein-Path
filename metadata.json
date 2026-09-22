@@ -1,0 +1,7 @@
+{
+  "name": "ProteinPath Design System",
+  "description": "Foundational design system and mobile food-delivery experience for ProteinPath, a nutrition-first luxury food marketplace.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
+

@@ -1,0 +1,134 @@
+{
+  "entities": {
+    "UserProfile": {
+      "title": "User Profile",
+      "description": "User profile containing nutrition targets, personal details, and preferences.",
+      "type": "object",
+      "properties": {
+        "userId": {
+          "type": "string",
+          "description": "The unique Firebase Auth UID of the user."
+        },
+        "email": {
+          "type": "string",
+          "description": "User email address."
+        },
+        "displayName": {
+          "type": "string",
+          "description": "User display name."
+        },
+        "photoURL": {
+          "type": "string",
+          "description": "Avatar photo URL."
+        },
+        "dailyProteinGoalGrams": {
+          "type": "number",
+          "description": "Daily targeted protein intake in grams."
+        },
+        "dailyCaloriesGoal": {
+          "type": "number",
+          "description": "Daily targeted calorie intake."
+        },
+        "savedAddress": {
+          "type": "string",
+          "description": "Default delivery destination address."
+        },
+        "createdAt": {
+          "type": "string",
+          "description": "Account registration timestamp."
+        },
+        "updatedAt": {
+          "type": "string",
+          "description": "Last profile update timestamp."
+        }
+      },
+      "required": ["userId", "email"]
+    },
+    "UserOrder": {
+      "title": "User Order",
+      "description": "A food delivery order placed by the user with items, macros, and delivery status.",
+      "type": "object",
+      "properties": {
+        "orderId": {
+          "type": "string",
+          "description": "Unique order identifier."
+        },
+        "userId": {
+          "type": "string",
+          "description": "UID of the user who placed the order."
+        },
+        "restaurantId": {
+          "type": "string",
+          "description": "Identifier of the restaurant kitchen."
+        },
+        "restaurantName": {
+          "type": "string",
+          "description": "Name of the restaurant."
+        },
+        "items": {
+          "type": "array",
+          "description": "Ordered items with quantities."
+        },
+        "totalAmount": {
+          "type": "number",
+          "description": "Total payment amount."
+        },
+        "status": {
+          "type": "string",
+          "description": "Delivery milestone status (confirmed, preparing, on_the_way, delivered)."
+        },
+        "deliveryAddress": {
+          "type": "string",
+          "description": "Destination address for the order."
+        },
+        "estimatedArrival": {
+          "type": "string",
+          "description": "Estimated arrival time."
+        },
+        "courierName": {
+          "type": "string",
+          "description": "Assigned courier partner."
+        },
+        "createdAt": {
+          "type": "string",
+          "description": "Order creation timestamp."
+        }
+      },
+      "required": ["orderId", "userId", "restaurantName", "totalAmount", "status"]
+    },
+    "FavoriteDish": {
+      "title": "Favorite Dish",
+      "description": "Saved favorite dish for quick reordering.",
+      "type": "object",
+      "properties": {
+        "foodId": {
+          "type": "string",
+          "description": "ID of the saved food dish."
+        },
+        "userId": {
+          "type": "string",
+          "description": "UID of the user."
+        },
+        "savedAt": {
+          "type": "string",
+          "description": "Timestamp when added."
+        }
+      },
+      "required": ["foodId", "userId"]
+    }
+  },
+  "firestore": {
+    "/users/{userId}": {
+      "schema": "UserProfile",
+      "description": "Stores user account profile and nutrition preferences."
+    },
+    "/users/{userId}/orders/{orderId}": {
+      "schema": "UserOrder",
+      "description": "Stores customer order history and active delivery milestones."
+    },
+    "/users/{userId}/favorites/{foodId}": {
+      "schema": "FavoriteDish",
+      "description": "Stores user saved favorite dishes."
+    }
+  }
+}

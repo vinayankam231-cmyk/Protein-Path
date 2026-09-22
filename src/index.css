@@ -1,0 +1,206 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+  
+  --color-canvas: #FBFBF9;
+  --color-surface: #FFFFFF;
+  --color-surface-subtle: #F5F5F0;
+  --color-border: #EBEAE5;
+  --color-border-strong: #DCD9D0;
+  
+  --color-text-primary: #121312;
+  --color-text-secondary: #5E605D;
+  --color-text-muted: #8C8E8B;
+  
+  --color-pp-accent: #0E6245;
+  --color-pp-accent-vibrant: #077A55;
+  --color-pp-accent-light: #EAF4EF;
+  --color-pp-accent-dark: #083D2A;
+}
+
+/* Apple Website High-Contrast Luxury Dark Palette Tokens */
+.dark,
+.apple-dark {
+  --color-canvas: #000000;
+  --color-surface: #161617;
+  --color-surface-subtle: #1D1D1F;
+  --color-border: rgba(255, 255, 255, 0.12);
+  --color-border-strong: rgba(255, 255, 255, 0.24);
+  
+  --color-text-primary: #F5F5F7;
+  --color-text-secondary: #86868B;
+  --color-text-muted: #6E6E73;
+  
+  --color-pp-accent: #30D158;
+  --color-pp-accent-vibrant: #34C759;
+  --color-pp-accent-light: rgba(48, 209, 88, 0.14);
+  --color-pp-accent-dark: #0A3B1B;
+}
+
+/* CRED Dark fallback tokens */
+.cred-dark {
+  --color-canvas: #0A0B0E;
+  --color-surface: #121418;
+  --color-surface-subtle: #181B22;
+  --color-border: rgba(255, 255, 255, 0.08);
+  --color-border-strong: rgba(255, 255, 255, 0.18);
+  
+  --color-text-primary: #FFFFFF;
+  --color-text-secondary: #9EA3AE;
+  --color-text-muted: #626673;
+  
+  --color-pp-accent: #00E599;
+  --color-pp-accent-vibrant: #2EFAA8;
+  --color-pp-accent-light: rgba(0, 229, 153, 0.12);
+  --color-pp-accent-dark: #04271A;
+}
+
+body {
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background-color: #FBFBF9;
+  color: #121312;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Apple Website Luxury Dark Mode utilities */
+.apple-dark {
+  background-color: #000000;
+  color: #F5F5F7;
+}
+
+.apple-bento-card {
+  background-color: #161617;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.12);
+}
+
+.apple-glass {
+  background: rgba(0, 0, 0, 0.8);
+  backdrop-filter: saturate(180%) blur(20px);
+  -webkit-backdrop-filter: saturate(180%) blur(20px);
+}
+
+.apple-glow-green {
+  box-shadow: 0 0 24px rgba(48, 209, 88, 0.28);
+}
+
+/* Automatic Color Mapping for Apple Dark Mode */
+.apple-dark .bg-white {
+  background-color: #161617 !important;
+}
+.apple-dark .bg-\[\#FBFBF9\] {
+  background-color: #000000 !important;
+}
+.apple-dark .bg-\[\#F5F5F0\] {
+  background-color: #1D1D1F !important;
+}
+.apple-dark .border-\[\#EBEAE5\] {
+  border-color: rgba(255, 255, 255, 0.12) !important;
+}
+.apple-dark .border-\[\#DCD9D0\] {
+  border-color: rgba(255, 255, 255, 0.24) !important;
+}
+.apple-dark .text-\[\#121312\] {
+  color: #F5F5F7 !important;
+}
+.apple-dark .text-\[\#5E605D\] {
+  color: #86868B !important;
+}
+.apple-dark .text-\[\#8C8E8B\] {
+  color: #6E6E73 !important;
+}
+.apple-dark .bg-\[\#EAF4EF\] {
+  background-color: rgba(48, 209, 88, 0.14) !important;
+}
+.apple-dark .text-\[\#0E6245\] {
+  color: #30D158 !important;
+}
+.apple-dark .border-\[\#D5E8DE\] {
+  border-color: rgba(48, 209, 88, 0.3) !important;
+}
+.apple-dark .divide-\[\#EBEAE5\] > :not([hidden]) ~ :not([hidden]) {
+  border-color: rgba(255, 255, 255, 0.12) !important;
+}
+
+/* CRED Luxury styling utilities */
+.cred-dark {
+  background-color: #0A0B0E;
+  color: #FFFFFF;
+}
+
+.cred-dark .bg-white {
+  background-color: #121418 !important;
+}
+.cred-dark .bg-\[\#FBFBF9\] {
+  background-color: #0A0B0E !important;
+}
+.cred-dark .bg-\[\#F5F5F0\] {
+  background-color: #181B22 !important;
+}
+.cred-dark .border-\[\#EBEAE5\] {
+  border-color: rgba(255, 255, 255, 0.08) !important;
+}
+.cred-dark .border-\[\#DCD9D0\] {
+  border-color: rgba(255, 255, 255, 0.18) !important;
+}
+.cred-dark .text-\[\#121312\] {
+  color: #FFFFFF !important;
+}
+.cred-dark .text-\[\#5E605D\] {
+  color: #9EA3AE !important;
+}
+.cred-dark .text-\[\#8C8E8B\] {
+  color: #626673 !important;
+}
+.cred-dark .bg-\[\#EAF4EF\] {
+  background-color: rgba(0, 229, 153, 0.12) !important;
+}
+.cred-dark .text-\[\#0E6245\] {
+  color: #00E599 !important;
+}
+.cred-dark .border-\[\#D5E8DE\] {
+  border-color: rgba(0, 229, 153, 0.3) !important;
+}
+.cred-dark .divide-\[\#EBEAE5\] > :not([hidden]) ~ :not([hidden]) {
+  border-color: rgba(255, 255, 255, 0.08) !important;
+}
+
+.cred-card-shadow {
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08), 0 12px 32px rgba(0, 0, 0, 0.45);
+}
+
+.cred-glow-mint {
+  box-shadow: 0 0 20px rgba(0, 229, 153, 0.28);
+}
+
+.cred-glow-subtle {
+  box-shadow: 0 0 30px rgba(0, 229, 153, 0.1);
+}
+
+/* Custom scrollbars for subtle luxury feel */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.12);
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.dark ::-webkit-scrollbar-thumb,
+.cred-dark ::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.15);
+}
+.dark ::-webkit-scrollbar-thumb:hover,
+.cred-dark ::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.28);
+}
